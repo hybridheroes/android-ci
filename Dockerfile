@@ -1,11 +1,18 @@
-# pin node v12 due to issue with npm hooks https://github.com/npm/cli/issues/1905
 ARG NODE_VERSION=12.x
-
 FROM reactnativecommunity/react-native-android
+# FROM bitriseio/docker-android
 
 RUN apt-get update && \
   apt-get install -y \
   build-essential \
   ruby \
-  ruby-dev
+  ruby-dev \
+  gradle
 RUN gem install bundle fastlane
+
+# Get up-to-date gradle
+# ARG GRADLE_VERSION=6.7.1
+# RUN curl -sL -o gradle.zip https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip &&\
+#  mkdir /opt/gradle && unzip -d /opt/gradle gradle.zip && rm gradle.zip
+# RUN export PATH=$PATH:/opt/gradle/gradle-${GRADLE_VERSION}/bin
+
