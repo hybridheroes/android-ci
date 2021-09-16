@@ -1,5 +1,4 @@
-ARG NODE_VERSION=12.x
-FROM reactnativecommunity/react-native-android
+FROM reactnativecommunity/react-native-android:4.1
 # FROM bitriseio/docker-android
 
 RUN apt-get update && \
