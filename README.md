@@ -24,10 +24,11 @@ FROM reactnativecommunity/react-native-android:5.4
 3. Push the image to Dockerhub: 
 
 ```shell
+docker push hybridheroes/android-ci:3
 docker push hybridheroes/android-ci:latest
 ```
 
-4. Use the update image in your `.gitlab-ci.yml`:
+4. Use the updated image in your `.gitlab-ci.yml`:
 
 ```yml
 .deploy_android:
