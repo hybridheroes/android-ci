@@ -1,4 +1,4 @@
-FROM reactnativecommunity/react-native-android:5.4
+FROM reactnativecommunity/react-native-android:7.0
 # FROM bitriseio/docker-android
 
 RUN apt-get update && \

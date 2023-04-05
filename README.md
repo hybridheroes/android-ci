@@ -11,20 +11,20 @@ To upload an updated Version of the image, follow these steps:
 1. Bump the upstream image's version in the `Dockerfile`
 
 ```Dockerfile
-FROM reactnativecommunity/react-native-android:5.4
+FROM reactnativecommunity/react-native-android:7.0
 ```
 
-2. Build a Docker image. Be sure to tag it with an incremented version and update the latest tag.
+2. Build a Docker image. Be sure to tag it with an incremented version and update the `latest` tag.
 
 ```shell
- docker build . -t hybridheroes/android-ci:3
- docker tag hybridheroes/android-ci:3 hybridheroes/android-ci:latest
+ docker build . -t hybridheroes/android-ci:4
+ docker tag hybridheroes/android-ci:4 hybridheroes/android-ci:latest
 ```
 
 3. Push the image to Dockerhub: 
 
 ```shell
-docker push hybridheroes/android-ci:3
+docker push hybridheroes/android-ci:4
 docker push hybridheroes/android-ci:latest
 ```
 
@@ -33,7 +33,7 @@ docker push hybridheroes/android-ci:latest
 ```yml
 .deploy_android:
   extends: .deploy
-  image: hybridheroes/android-ci:3
+  image: hybridheroes/android-ci:4
   tags:
     - docker
 ```
